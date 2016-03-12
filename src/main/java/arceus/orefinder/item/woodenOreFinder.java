@@ -13,7 +13,7 @@ import java.util.Random;
 
 public class woodenOreFinder extends arcItem {
 
-    private Random arcRandom = new Random();
+    private static Random randomNumber = new Random();
     private oreFinderChunk oreChunk;
     private boolean ore = false;
 
@@ -28,15 +28,15 @@ public class woodenOreFinder extends arcItem {
 
     private byte rng() {
 
-        if (ConfigurationHandler.do_rng) {
+        if (ConfigurationHandler.do_random_false_positive) {
 
-            float rng = arcRandom.nextFloat();
+            float rng = randomNumber.nextFloat();
 
-            if (rng <= ConfigurationHandler.wooned_rng2 / 2) {
+            if (rng <= ConfigurationHandler.wooded_chance_false_positive / 2) {
 
                 return 1;
 
-            } else if (rng <= ConfigurationHandler.wooned_rng2) {
+            } else if (rng <= ConfigurationHandler.wooded_chance_false_positive) {
 
                 return 2;
             }
@@ -84,7 +84,7 @@ public class woodenOreFinder extends arcItem {
             } else {
 
                 ore = false;
-                for (byte i = (byte) -ConfigurationHandler.wooned_ore_finder_size; i < ConfigurationHandler.wooned_ore_finder_size; i++) {
+                for (byte i = (byte) -ConfigurationHandler.wooded_ore_finder_size; i < ConfigurationHandler.wooded_ore_finder_size; i++) {
 
                     Block blockX;
 
