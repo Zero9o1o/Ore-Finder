@@ -1,7 +1,7 @@
 package arceus.orefinder.item;
 
 import arceus.orefinder.handler.ConfigurationHandler;
-import arceus.orefinder.item.oreFinderThings.oreFinderChunk;
+import arceus.orefinder.item.world.oreFinderChunk;
 import arceus.orefinder.reference.Names;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class woodenOreFinder extends arcItem {
+public class woodenOreFinder extends orefinderItem {
 
     private static Random randomNumber = new Random();
     private oreFinderChunk oreChunk;

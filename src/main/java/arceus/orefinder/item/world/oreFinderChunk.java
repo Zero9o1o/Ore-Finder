@@ -1,4 +1,4 @@
-package arceus.orefinder.item.oreFinderThings;
+package arceus.orefinder.item.world;
 
 import net.minecraft.world.ChunkCoordIntPair;
 

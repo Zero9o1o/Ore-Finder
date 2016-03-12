@@ -31,14 +31,12 @@ public class ConfigurationHandler {
 
     private static void loadConfiguration() {
 
-        Configuration var10002 = Configuration;
+        //Configuration var10002 = Configuration;
 
         //wooden ore finder
         do_random_false_positive = Configuration.getBoolean("false_p/g", "wooden", true, "do false positive and false negative. ");
         wooded_ore_finder_size = (byte) Configuration.getInt("ore_finder-Size", "wooden", 5, 1, 100, "how long in each axis to look for ores");
         wooded_chance_false_positive = Configuration.getFloat("chance_of_p/n", "wooden", 0.66f, 0.0f, 1.0f, "chance of geting a false positive or false negative.");
-
-        //
 
         if (Configuration.hasChanged()) {
             Configuration.save();

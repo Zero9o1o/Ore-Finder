@@ -8,8 +8,8 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class arcItem extends Item {
-    public arcItem() {
+public class orefinderItem extends Item {
+    public orefinderItem() {
         super();
         setCreativeTab(creativeTab.orefinder);
     }
