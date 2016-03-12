@@ -42,11 +42,8 @@ public class OreFinder {
     @Mod.EventHandler
     public void postinit(FMLPostInitializationEvent event) {
 
-        for (int i = 0; i < ConfigurationHandler.ore_list.length; i++) {
 
-             System.out.println(ConfigurationHandler.ore_list[i]);
 
-        }
 
     }
 

@@ -2,19 +2,13 @@ package arceus.orefinder.item;
 
 import arceus.orefinder.handler.ConfigurationHandler;
 import arceus.orefinder.reference.Names;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.world.World;
 
-import java.util.List;
 import java.util.Random;
-
-import static arceus.orefinder.handler.ConfigurationHandler.ore_list;
-
 
 public class woodenOreFinder extends arcItem {
 
@@ -65,7 +59,6 @@ public class woodenOreFinder extends arcItem {
             }
 
             ore = false;
-            loop:
             for (byte i = (byte) -ConfigurationHandler.wooned_ore_finder_size; i < ConfigurationHandler.wooned_ore_finder_size; i++) {
 
                 Block blockX;
@@ -74,53 +67,40 @@ public class woodenOreFinder extends arcItem {
 
                     blockX = world.getBlock(x + i, y, z);
 
-                    for (byte k = 0; k < ore_list.length; k++) {
 
-                        System.out.println(blockX.getUnlocalizedName());
+                    System.out.println(blockX.getUnlocalizedName());
 
-                        if (blockX.getUnlocalizedName().contains(ore_list[k])) {
+                    if (blockX.getUnlocalizedName().contains("ore") || blockX.getUnlocalizedName().contains("Ore")) {
 
-                            ore = true;
-                            break loop;
-                            //tile.grass  tile.stone
-                        }
-
+                        ore = true;
+                        //tile.grass  tile.stone
                     }
+
 
                 } else {
 
                     blockX = world.getBlock(x + i, y, z);
-                    for (byte k = 0; k < ore_list.length; k++) {
+                    if (blockX.getUnlocalizedName().contains("ore") || blockX.getUnlocalizedName().contains("Ore")) {
 
-                        if (blockX.getUnlocalizedName().contains(ore_list[k])) {
-                            ore = true;
-                            break loop;
-
-                        }
-
+                        ore = true;
+                        //tile.grass  tile.stone
                     }
 
                     Block blockZ = world.getBlock(x, y, z + i);
-                    for (byte k = 0; k < ore_list.length; k++) {
 
-                        if (blockZ.getUnlocalizedName().contains(ore_list[k])) {
+                    if (blockZ.getUnlocalizedName().contains("ore") || blockZ.getUnlocalizedName().contains("Ore")) {
                             ore = true;
-                            break loop;
 
                         }
 
-                    }
 
                     Block blockY = world.getBlock(x, y + i, z);
-                    for (byte k = 0; k < ore_list.length; k++) {
 
-                        if (blockY.getUnlocalizedName().contains(ore_list[k])) {
+                    if (blockY.getUnlocalizedName().contains("ore") || blockY.getUnlocalizedName().contains("Ore")) {
                             ore = true;
-                            break loop;
 
                         }
 
-                    }
 
                 }
 
