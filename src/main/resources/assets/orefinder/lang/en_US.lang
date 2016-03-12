@@ -1,8 +1,10 @@
 item.orefinder:orefinder.name=Ore Finder
-item.orefinder:woodenorefinder.name=Wooden Ore Finde
+item.orefinder:woodenorefinder.name=Wooden Ore Finder
 
 msg.ore_found.txt=Ore found.
 msg.no_ore_found.txt=No ore found.
 msg.made.txt=Time to find all the ores doods
 
 key.categories.orefinder=Ore Finder
+
+orefinder:gui.config.title=Ore Finder Config

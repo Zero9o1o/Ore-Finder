@@ -9,9 +9,14 @@ import java.io.File;
 
 public class ConfigurationHandler {
     public static Configuration Configuration;
-    public static Boolean do_random_false_positive;
+
+    public static Boolean do_random_false_results;
+
     public static byte wooded_ore_finder_size;
-    public static Float wooded_chance_false_positive;
+    public static byte iron_ore_finder_size;
+
+    public static float wooded_chance_false_result;
+    public static float iron_chance_false_result;
 
     public ConfigurationHandler() {
     }
@@ -34,9 +39,13 @@ public class ConfigurationHandler {
         //Configuration var10002 = Configuration;
 
         //wooden ore finder
-        do_random_false_positive = Configuration.getBoolean("false_p/g", "wooden", true, "do false positive and false negative. ");
-        wooded_ore_finder_size = (byte) Configuration.getInt("ore_finder-Size", "wooden", 5, 1, 100, "how long in each axis to look for ores");
-        wooded_chance_false_positive = Configuration.getFloat("chance_of_p/n", "wooden", 0.66f, 0.0f, 1.0f, "chance of geting a false positive or false negative.");
+        do_random_false_results = Configuration.getBoolean("enable_false_result", "general", true, "If true then false results are enabled.");
+
+        wooded_chance_false_result = Configuration.getFloat("chance_of_false_result", "wooden", 0.80f, 0.0f, 1.0f, "The chance of getting a false result");
+        wooded_ore_finder_size = (byte) Configuration.getInt("ore_finder-Size", "wooden", 5, 1, 100, "The length on each axis to scan for ores");
+
+        iron_chance_false_result = Configuration.getFloat("chance_of_false_result", "iron", 0.60f, 0.0f, 1.0f, "The chance of getting a false result");
+        iron_ore_finder_size = (byte) Configuration.getInt("ore_finder-Size", "iron", 5, 1, 100, "The length on each axis to scan for ores");
 
         if (Configuration.hasChanged()) {
             Configuration.save();

@@ -1,6 +1,6 @@
 package arceus.orefinder.item;
 
-import arceus.orefinder.handler.ConfigurationHandler;
+import arceus.orefinder.OreFinderConfig;
 import arceus.orefinder.item.world.oreFinderChunk;
 import arceus.orefinder.reference.Names;
 import net.minecraft.block.Block;
@@ -28,15 +28,15 @@ public class woodenOreFinder extends orefinderItem {
 
     private byte rng() {
 
-        if (ConfigurationHandler.do_random_false_positive) {
+        if (OreFinderConfig.doRandomResult) {
 
             float rng = randomNumber.nextFloat();
 
-            if (rng <= ConfigurationHandler.wooded_chance_false_positive / 2) {
+            if (rng <= OreFinderConfig.woodenChance / 2) {
 
                 return 1;
 
-            } else if (rng <= ConfigurationHandler.wooded_chance_false_positive) {
+            } else if (rng <= OreFinderConfig.woodenChance) {
 
                 return 2;
             }
@@ -84,7 +84,7 @@ public class woodenOreFinder extends orefinderItem {
             } else {
 
                 ore = false;
-                for (byte i = (byte) -ConfigurationHandler.wooded_ore_finder_size; i < ConfigurationHandler.wooded_ore_finder_size; i++) {
+                for (byte i = (byte) -OreFinderConfig.woodenSize; i < OreFinderConfig.woodenSize; i++) {
 
                     Block blockX;
 

@@ -7,7 +7,7 @@ public class oreFinderChunk {
     public ChunkCoordIntPair chunkXZ;
     public byte var1;
 
-    public oreFinderChunk(ChunkCoordIntPair CHUNK_XZ,byte VAR_1 ){
+    public oreFinderChunk(ChunkCoordIntPair CHUNK_XZ, byte VAR_1 ){
 
         this.chunkXZ = CHUNK_XZ;
         this.var1 = VAR_1;
