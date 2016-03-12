@@ -19,8 +19,6 @@ import static arceus.orefinder.handler.ConfigurationHandler.ore_list;
 public class woodenOreFinder extends arcItem {
 
     private Random arcRandom = new Random();
-    //private byte randomSize = ConfigurationHandler.wooned_rng;
-    //private byte oreFindSize = ConfigurationHandler.wooned_ore_finder_size;
 
     private boolean ore = false;
 
@@ -30,25 +28,6 @@ public class woodenOreFinder extends arcItem {
         this.setUnlocalizedName(Names.Items.woodenoreFinder);
         this.setMaxStackSize(1);
         this.setMaxDamage(100);
-
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void addInformation(ItemStack itemStack, EntityPlayer EntityPlayer, List list, boolean Boolean) {
-
-        list.add("  wooden ore finder hype !!!!!!!!!!!!!!!!!!");
-
-    }
-
-    @Override
-    public void onCreated(ItemStack itemStack, World world, EntityPlayer player) {
-
-        if (!world.isRemote) {
-
-            player.addChatMessage(new ChatComponentTranslation("msg.made.txt"));
-
-        }
 
     }
 
