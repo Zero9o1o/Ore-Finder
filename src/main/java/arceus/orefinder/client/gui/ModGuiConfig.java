@@ -10,7 +10,7 @@ public class ModGuiConfig extends GuiConfig {
 
     public ModGuiConfig(GuiScreen guiScreen) {
 
-        super(guiScreen, (new ConfigElement(ConfigurationHandler.Configuration.getCategory("general"))).getChildElements(), Reference.MOD_ID, false, false, GuiConfig.getAbridgedConfigPath(ConfigurationHandler.Configuration.toString()));
+        super(guiScreen, (new ConfigElement(ConfigurationHandler.Configuration.getCategory("wooden"))).getChildElements(), Reference.MOD_ID, false, false, GuiConfig.getAbridgedConfigPath(ConfigurationHandler.Configuration.toString()));
 
     }
 }
