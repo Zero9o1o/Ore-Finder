@@ -37,17 +37,17 @@ public class woodenOreFinder extends arcItem {
             itemstack.damageItem(1, player);
             if (ConfigurationHandler.do_rng) {
 
-                byte rng = (byte) arcRandom.nextInt(ConfigurationHandler.wooned_rng);
+                float rng = arcRandom.nextFloat();
                 System.out.println(rng);
 
-                if (rng == 1) {
+                if (rng <= ConfigurationHandler.wooned_rng2 / 2) {
 
                     player.addChatMessage(new ChatComponentTranslation("msg.ore_found.txt"));
                     return true;
 
                 }
 
-                if (rng == 2) {
+                if (rng <= ConfigurationHandler.wooned_rng2 ) {
 
                     player.addChatMessage(new ChatComponentTranslation("msg.no_ore_found.txt"));
                     return true;

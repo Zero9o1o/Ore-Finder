@@ -11,7 +11,7 @@ public class ConfigurationHandler {
     public static Configuration Configuration;
     public static Boolean do_rng;
     public static byte wooned_ore_finder_size;
-    public static byte wooned_rng;
+    public static Float wooned_rng2;
 
     public ConfigurationHandler() {
     }
@@ -34,9 +34,9 @@ public class ConfigurationHandler {
         Configuration var10002 = Configuration;
 
         //wooden ore finder
-        do_rng = Configuration.getBoolean("do_rng", "general", true, "false positive and false negative true on false off");
-        wooned_ore_finder_size = (byte) Configuration.getInt("wooden_ore_finder-Size", "general", 5, 1, 20, "how big of it too look for ores");
-        wooned_rng = (byte) Configuration.getInt("wooden_rng", "general", 3, 3, 127, "rng on false positive and false negative");
+        do_rng = Configuration.getBoolean("false_p/g", "wooden", true, "do false positive and false negative. ");
+        wooned_ore_finder_size = (byte) Configuration.getInt("ore_finder-Size", "wooden", 5, 1, 100, "how long in each axis to look for ores");
+        wooned_rng2 = Configuration.getFloat("chance_of_p/n", "wooden", 0.66f, 0.0f, 1.0f, "chance of geting a false positive or false negative.");
 
         //
 
