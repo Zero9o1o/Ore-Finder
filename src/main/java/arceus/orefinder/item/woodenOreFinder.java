@@ -13,7 +13,11 @@ import java.util.Random;
 
 public class woodenOreFinder extends arcItem {
 
+<<<<<<< HEAD
     private static Random randomNumber = new Random();
+=======
+    static private Random arcRandom = new Random();
+>>>>>>> refs/remotes/Arceusthepokemon/master
     private oreFinderChunk oreChunk;
     private boolean ore = false;
 
