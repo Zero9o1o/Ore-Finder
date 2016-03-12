@@ -43,7 +43,6 @@ public class woodenOreFinder extends arcItem {
                 if (rng == 1) {
 
                     player.addChatMessage(new ChatComponentTranslation("msg.ore_found.txt"));
-                    //System.out.println("ore hype !!!!");
                     return true;
 
                 }
@@ -51,11 +50,9 @@ public class woodenOreFinder extends arcItem {
                 if (rng == 2) {
 
                     player.addChatMessage(new ChatComponentTranslation("msg.no_ore_found.txt"));
-                    //System.out.println("no ore ._.");
                     return true;
 
                 }
-
             }
 
             ore = false;
@@ -72,7 +69,6 @@ public class woodenOreFinder extends arcItem {
                     if (blockX.getUnlocalizedName().contains("ore") || blockX.getUnlocalizedName().contains("Ore")) {
 
                         ore = true;
-                        //tile.grass  tile.stone
                     }
 
                 } else {
@@ -81,7 +77,6 @@ public class woodenOreFinder extends arcItem {
                     if (blockX.getUnlocalizedName().contains("ore") || blockX.getUnlocalizedName().contains("Ore")) {
 
                         ore = true;
-                        //tile.grass  tile.stone
                     }
 
                     Block blockZ = world.getBlock(x, y, z + i);
@@ -97,20 +92,17 @@ public class woodenOreFinder extends arcItem {
                         ore = true;
 
                     }
-
                 }
             }
 
             if (ore) {
 
                 player.addChatMessage(new ChatComponentTranslation("msg.ore_found.txt"));
-                //System.out.println("ore = " + ore);
                 return true;
 
             } else {
 
                 player.addChatMessage(new ChatComponentTranslation("msg.no_ore_found.txt"));
-                //System.out.println("no ore");
                 return true;
 
             }
