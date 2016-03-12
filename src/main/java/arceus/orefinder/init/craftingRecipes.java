@@ -12,5 +12,4 @@ public class craftingRecipes {
         GameRegistry.addRecipe(new ItemStack(((initItem.woodenoreFinder)), 1), new Object[]{"xx ", " /x", " / ", '/', Items.stick, 'x', Blocks.log});
 
     }
-
 }

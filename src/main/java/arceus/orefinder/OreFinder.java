@@ -36,13 +36,10 @@ public class OreFinder {
     public void init(FMLInitializationEvent event) {
 
 
-
     }
 
     @Mod.EventHandler
     public void postinit(FMLPostInitializationEvent event) {
-
-
 
 
     }

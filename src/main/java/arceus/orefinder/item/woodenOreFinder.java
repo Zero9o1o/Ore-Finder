@@ -67,7 +67,6 @@ public class woodenOreFinder extends arcItem {
 
                     blockX = world.getBlock(x + i, y, z);
 
-
                     System.out.println(blockX.getUnlocalizedName());
 
                     if (blockX.getUnlocalizedName().contains("ore") || blockX.getUnlocalizedName().contains("Ore")) {
@@ -75,7 +74,6 @@ public class woodenOreFinder extends arcItem {
                         ore = true;
                         //tile.grass  tile.stone
                     }
-
 
                 } else {
 
@@ -89,21 +87,18 @@ public class woodenOreFinder extends arcItem {
                     Block blockZ = world.getBlock(x, y, z + i);
 
                     if (blockZ.getUnlocalizedName().contains("ore") || blockZ.getUnlocalizedName().contains("Ore")) {
-                            ore = true;
+                        ore = true;
 
-                        }
-
+                    }
 
                     Block blockY = world.getBlock(x, y + i, z);
 
                     if (blockY.getUnlocalizedName().contains("ore") || blockY.getUnlocalizedName().contains("Ore")) {
-                            ore = true;
+                        ore = true;
 
-                        }
-
+                    }
 
                 }
-
             }
 
             if (ore) {
@@ -117,7 +112,6 @@ public class woodenOreFinder extends arcItem {
                 player.addChatMessage(new ChatComponentTranslation("msg.no_ore_found.txt"));
                 //System.out.println("no ore");
                 return true;
-
 
             }
         }

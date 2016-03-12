@@ -16,5 +16,4 @@ public class initItem {
         GameRegistry.registerItem(woodenoreFinder, Names.Items.woodenoreFinder);
 
     }
-
 }
