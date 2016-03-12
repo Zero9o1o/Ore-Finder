@@ -13,7 +13,7 @@ import java.util.Random;
 
 public class woodenOreFinder extends arcItem {
 
-    private Random arcRandom = new Random();
+    static private Random arcRandom = new Random();
     private oreFinderChunk oreChunk;
     private boolean ore = false;
 
