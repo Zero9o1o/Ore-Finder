@@ -1,16 +1,18 @@
 package arceus.orefinder;
 
+import arceus.orefinder.reference.Reference;
+import cpw.mods.fml.client.event.ConfigChangedEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.client.resources.I18n;
 import net.minecraftforge.common.config.Configuration;
 
 import java.io.File;
 
 public class OreFinderConfig {
-    public static final String GENERAL = "general";
-    public static final String WOODEN = "wooden";
-
     public static Configuration config;
-    public static File configFile;
+
+    public static String GENERAL = "general";
+    public static String WOODEN = "wooden";
 
     public static Boolean doRandomResult;
 
@@ -20,9 +22,16 @@ public class OreFinderConfig {
     public static float woodenChance;
     public static float iron_chance_false_result;
 
-    public static void loadFromFile(File configFile) {
-        OreFinderConfig.configFile = configFile;
-        config = new Configuration(configFile);
+    public OreFinderConfig(){
+
+    }
+
+    public static void init(File configFile){
+        if (config == null){
+            config = new Configuration(configFile);
+            loadFromConfig();
+        }
+
         loadFromConfig();
     }
 
@@ -35,14 +44,19 @@ public class OreFinderConfig {
 //        iron_chance_false_result = config.getFloat("chance_of_false_result", "iron", 0.60f, 0.0f, 1.0f, "The chance of getting a false result");
 //        iron_ore_finder_size = (byte) config.getInt("ore_finder-Size", "iron", 5, 1, 100, "The length on each axis to scan for ores");
 
-        config.save();
+        if (config.hasChanged()){
+            config.save();
+        }
     }
 
-    public static void lightReload() {
-        loadFromConfig();
-    }
+    @SubscribeEvent
+    public void onConfigurationChangedEvent(ConfigChangedEvent event) {
 
-    public static void hardReload() {
-        loadFromFile(configFile);
+        if (event.modID.equalsIgnoreCase(Reference.MOD_ID)) {
+
+            loadFromConfig();
+
+        }
+
     }
 }
