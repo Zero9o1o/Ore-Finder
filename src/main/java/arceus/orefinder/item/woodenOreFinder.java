@@ -46,13 +46,13 @@ public class woodenOreFinder extends prospectorTool {
 
             if (oreChunk.var1 == 1) {
 
-                player.addChatMessage(new ChatComponentTranslation("msg.ore_found.txt"));
-                System.out.println("false positive");
-
-            } else if (oreChunk.var1 == 2) {
-
                 player.addChatMessage(new ChatComponentTranslation("msg.no_ore_found.txt"));
                 System.out.println("false negative");
+
+            } else if (OreFinderConfig.doWoodenFalsePositive && oreChunk.var1 == 2) {
+
+                player.addChatMessage(new ChatComponentTranslation("msg.ore_found.txt"));
+                System.out.println("false positive");
 
             } else {
 

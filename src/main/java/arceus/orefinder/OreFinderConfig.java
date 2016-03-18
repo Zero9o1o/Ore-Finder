@@ -15,6 +15,7 @@ public class OreFinderConfig {
     public static String WOODEN = "wooden";
 
     public static Boolean doRandomResult;
+    public static Boolean doWoodenFalsePositive;
 
     public static byte woodenSize;
 //    public static byte iron_ore_finder_size;
@@ -36,10 +37,11 @@ public class OreFinderConfig {
     }
 
     private static void loadFromConfig(){
-        doRandomResult = config.getBoolean("doRandomResult", GENERAL, true, I18n.format("orefinder:config.doRandomResult.tooltip"), "orefinder:config.doRandomResult");
+        doRandomResult = config.getBoolean("doRandomResult", GENERAL, true,  "If false disables all false result features");
 
-        woodenChance = config.getFloat("woodenChance", WOODEN, 0.80f, 0.0f, 1.0f, I18n.format("orefinder:config.woodenChance.tooltip"), "orefinder:config.woodenChance");
-        woodenSize = (byte) config.getInt("woodenSize", WOODEN, 5, 1, 100, I18n.format("orefinder:config.woodenSize.tooltip"), "orefinder:config.woodenSize");
+        woodenChance = config.getFloat("woodenChance", WOODEN, 0.80f, 0.0f, 1.0f, "The chance for wooden prospecting tool to return a false result");
+        woodenSize = (byte) config.getInt("woodenSize", WOODEN, 5, 1, 100, "The size of the area that the wooden prospecting tool scans");
+        doWoodenFalsePositive = config.getBoolean("doWoodenFalsePositive", WOODEN, true, "Enables wooden prospecting tool to return false positives");
 
 //        iron_chance_false_result = config.getFloat("chance_of_false_result", "iron", 0.60f, 0.0f, 1.0f, "The chance of getting a false result");
 //        iron_ore_finder_size = (byte) config.getInt("ore_finder-Size", "iron", 5, 1, 100, "The length on each axis to scan for ores");
