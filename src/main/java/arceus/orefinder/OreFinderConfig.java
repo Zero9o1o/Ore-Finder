@@ -17,10 +17,10 @@ public class OreFinderConfig {
     public static Boolean doRandomResult;
 
     public static byte woodenSize;
-    public static byte iron_ore_finder_size;
+//    public static byte iron_ore_finder_size;
 
     public static float woodenChance;
-    public static float iron_chance_false_result;
+//    public static float iron_chance_false_result;
 
     public OreFinderConfig(){
 
