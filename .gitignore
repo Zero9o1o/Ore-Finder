@@ -1,4 +1,12 @@
-*.iml
-src/main/test/woodenorefilnder.xcf
+/eclipse
+/*.txt
 /build
 /.gradle
+/.settings
+/.classpath
+/*.ipr
+/*.iws
+/*.iml
+/out
+/gradle.properties
+/*.zip
